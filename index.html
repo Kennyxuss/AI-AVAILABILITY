@@ -1,0 +1,1240 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NeuralOS AI</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="cursor-glow"></div>
+    <div class="page-shell">
+      <aside class="sidebar">
+        <div class="logo-box">
+          <div class="logo-mark">N</div>
+          <div class="logo-copy">
+            <strong>NeuralOS</strong>
+            <span>Future-ready AI</span>
+          </div>
+        </div>
+
+        <button class="new-chat">＋ New Chat</button>
+
+        <div class="sidebar-nav">
+          <button class="sidebar-link active" id="navSearchChats">🔎 Search Chats</button>
+          <button class="sidebar-link" id="navChatHistory">💬 Chat History</button>
+          <button class="sidebar-link" id="navAiModels">🧠 AI Models</button>
+          <button class="sidebar-link" id="navLibrary">📚 Library</button>
+          <button class="sidebar-link" id="navProjects">🗂️ Projects</button>
+          <button class="sidebar-link" id="navSettings">⚙️ Settings</button>
+        </div>
+
+        <div class="sidebar-footer">
+          <div class="profile-card">
+            <div class="avatar">N</div>
+            <div>
+              <strong>Neil Carter</strong><br />
+              <span style="color: var(--muted); font-size: 0.9rem;">Premium Plan</span>
+            </div>
+          </div>
+        </div>
+      </aside>
+
+      <main class="main-content">
+        <header class="topbar" id="topbar">
+          <div class="topbar-left">
+            <div class="logo-mark" style="width: 34px; height: 34px; border-radius: 10px;">N</div>
+            <div class="topbar-badge">
+              <span>⚡</span>
+              <span>NeuralOS AI</span>
+            </div>
+          </div>
+          <div class="topbar-right">
+            <button class="icon-btn" id="notifBtn" type="button" style="position: relative;">
+              🔔
+              <span class="notif-dot" id="notifDot" hidden></span>
+            </button>
+            <button class="upgrade-btn" id="upgradeBtn" type="button">Upgrade</button>
+            <div class="avatar" id="topbarAvatar" style="cursor: pointer;">N</div>
+          </div>
+        </header>
+
+        <section class="hero-card" id="heroCard">
+          <div class="hero-badge">✦ Trusted by modern product teams</div>
+          <h1 id="heroHeading">Ready when you are.</h1>
+          <p id="heroText">Your intelligent AI assistant for learning, healthcare, coding, research, and productivity. Crafted for seamless thinking, rapid insight, and premium experiences.</p>
+
+          <div class="chat-shell" id="heroChatShell">
+            <div class="chat-box">
+              <form class="chat-form" id="heroChatForm">
+                <button class="icon-btn" type="button">📎</button>
+                <input id="heroChatInput" class="chat-input" placeholder="Ask anything, from research to product strategy…" autocomplete="off" />
+                <button class="icon-btn" type="button">🎙️</button>
+                <button class="send-btn" type="submit">➜</button>
+              </form>
+            </div>
+
+            <div class="quick-actions">
+              <button class="quick-chip">🎨 Create Image</button>
+              <button class="quick-chip">✍️ Write or Edit</button>
+              <button class="quick-chip">🔍 Search the Web</button>
+              <button class="quick-chip">💻 Generate Code</button>
+              <button class="quick-chip">📄 Summarize PDF</button>
+              <button class="quick-chip">📊 Analyze Data</button>
+            </div>
+          </div>
+        </section>
+
+        <section class="conversation-shell" id="conversationShell" hidden>
+          <div class="conversation-card glass-card">
+            <div class="conversation-header">
+              <div>
+                <p class="eyebrow">Conversation with AI</p>
+                <h2>NeuralOS is ready for your next question.</h2>
+              </div>
+              <button class="icon-btn" id="backToHome" type="button">←</button>
+            </div>
+
+            <div class="conversation-window">
+              <div class="conversation-messages" id="conversationMessages"></div>
+              <form class="conversation-form" id="conversationForm">
+                <input id="conversationInput" class="conversation-input" type="text" placeholder="Continue the conversation…" autocomplete="off" />
+                <button class="send-btn" id="conversationSendBtn" type="submit" title="Send">➜</button>
+              </form>
+            </div>
+          </div>
+        </section>
+
+        <section class="talk-section" id="talkSection">
+          <div class="talk-card glass-card">
+            <div class="ai-visual">
+              <div class="ai-ring"></div>
+              <div class="ai-avatar">🤖</div>
+            </div>
+            <div class="talk-copy">
+              <h3>Talk with AI</h3>
+              <p>Start a fluid conversation with an assistant that listens, understands context, and responds with speed and clarity.</p>
+              <div class="voice-waves" aria-label="voice animation">
+                <span></span><span></span><span></span><span></span><span></span>
+              </div>
+              <div class="talk-actions">
+                <button class="talk-btn primary">Start Conversation</button>
+                <button class="talk-btn">Live Listening</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="glass-card" style="padding: 24px; border-radius: 24px;">
+            <div class="section-heading" style="margin-bottom: 10px;">
+              <div>
+                <h2>AI Features</h2>
+                <p>Built to feel effortless from first prompt to final output.</p>
+              </div>
+            </div>
+            <p style="color: var(--muted); line-height: 1.7;">From research synthesis to code generation, every experience is optimized with enterprise-grade quality, speed, and privacy guardrails.</p>
+          </div>
+        </section>
+
+        <section id="premiumCapabilities">
+          <div class="section-heading">
+            <div>
+              <h2>Premium capabilities</h2>
+              <p>Elegant experiences for every modern workflow.</p>
+            </div>
+          </div>
+          <div class="features-grid">
+            <article class="feature-card">
+              <div class="feature-icon">💬</div>
+              <h3>Smart AI Chat</h3>
+              <p>Natural, context-aware conversations that adapt to your goals in real time.</p>
+            </article>
+            <article class="feature-card">
+              <div class="feature-icon">🩺</div>
+              <h3>Medical Assistant</h3>
+              <p>Reliable support for health summaries, symptom frameworks, and patient education.</p>
+            </article>
+            <article class="feature-card">
+              <div class="feature-icon">⌘</div>
+              <h3>Code Generator</h3>
+              <p>Generate frontends, utilities, and automation with excellent structure and clarity.</p>
+            </article>
+            <article class="feature-card">
+              <div class="feature-icon">🖼️</div>
+              <h3>Image Generator</h3>
+              <p>Create polished visuals for ideas, campaigns, product exploration, and pitch decks.</p>
+            </article>
+            <article class="feature-card">
+              <div class="feature-icon">📄</div>
+              <h3>Document Analysis</h3>
+              <p>Summarize contracts, reports, and long-form PDFs into concise action points.</p>
+            </article>
+            <article class="feature-card">
+              <div class="feature-icon">🌐</div>
+              <h3>Real-time Web Search</h3>
+              <p>Ground every answer with live sources and clear links for deeper confidence.</p>
+            </article>
+          </div>
+        </section>
+
+        <section id="whyChoose">
+          <div class="section-heading">
+            <div>
+              <h2>Why choose our AI</h2>
+              <p>Performance, trust, and clarity in one place.</p>
+            </div>
+          </div>
+          <div class="stats-grid">
+            <div class="stat-card">
+              <div class="number" data-count="99.9">0</div>
+              <span>Accuracy</span>
+            </div>
+            <div class="stat-card">
+              <div class="number" data-count="0.3">0</div>
+              <span>Fast Response</span>
+            </div>
+            <div class="stat-card">
+              <div class="number" data-count="100">0</div>
+              <span>Private by Design</span>
+            </div>
+            <div class="stat-card">
+              <div class="number" data-count="24">0</div>
+              <span>Seven Availability</span>
+            </div>
+          </div>
+        </section>
+
+        <section id="testimonials">
+          <div class="section-heading">
+            <div>
+              <h2>What customers say</h2>
+              <p>Trusted by founders, operators, and creators.</p>
+            </div>
+          </div>
+          <div class="testimonials-grid">
+            <article class="testimonial-card">
+              <div class="top">
+                <div class="test-avatar">A</div>
+                <div>
+                  <strong>Alicia Chen</strong><br />
+                  <span style="color: var(--muted); font-size: 0.9rem">Product Lead</span>
+                </div>
+              </div>
+              <div class="stars">★★★★★</div>
+              <p>“It feels like the interface was designed by a team that truly understands calm, delightful product experiences.”</p>
+            </article>
+            <article class="testimonial-card">
+              <div class="top">
+                <div class="test-avatar">M</div>
+                <div>
+                  <strong>Marcus Lee</strong><br />
+                  <span style="color: var(--muted); font-size: 0.9rem">Startup Founder</span>
+                </div>
+              </div>
+              <div class="stars">★★★★★</div>
+              <p>“The research mode and code generation are incredibly polished. It saves us hours each week.”</p>
+            </article>
+            <article class="testimonial-card">
+              <div class="top">
+                <div class="test-avatar">R</div>
+                <div>
+                  <strong>Rina Patel</strong><br />
+                  <span style="color: var(--muted); font-size: 0.9rem">Researcher</span>
+                </div>
+              </div>
+              <div class="stars">★★★★★</div>
+              <p>“This has become the quiet powerhouse behind our daily workflows, from analysis to synthesis.”</p>
+            </article>
+          </div>
+        </section>
+
+        <section id="pricing">
+          <div class="section-heading">
+            <div>
+              <h2>Pricing</h2>
+              <p>Select the plan that matches your ambition.</p>
+            </div>
+          </div>
+          <div class="pricing-grid">
+            <article class="pricing-card">
+              <span class="tag">Free</span>
+              <h3>Starter</h3>
+              <div class="price">$0 <small>/ month</small></div>
+              <ul>
+                <li>3 daily AI chats</li>
+                <li>Basic search</li>
+                <li>Community access</li>
+              </ul>
+              <button class="plan-btn" type="button" data-plan="Starter">Get Started</button>
+            </article>
+            <article class="pricing-card highlight">
+              <span class="tag">Most Popular</span>
+              <h3>Pro</h3>
+              <div class="price">$19 <small>/ month</small></div>
+              <ul>
+                <li>Unlimited conversations</li>
+                <li>Advanced analysis tools</li>
+                <li>Priority support</li>
+              </ul>
+              <button class="plan-btn primary" type="button" data-plan="Pro">Get Started</button>
+            </article>
+            <article class="pricing-card">
+              <span class="tag">Enterprise</span>
+              <h3>Scale</h3>
+              <div class="price">Custom</div>
+              <ul>
+                <li>Dedicated deployment</li>
+                <li>Compliance controls</li>
+                <li>Private cloud options</li>
+              </ul>
+              <button class="plan-btn" type="button" data-plan="Scale">Contact Sales</button>
+            </article>
+          </div>
+        </section>
+
+        <section id="faq">
+          <div class="section-heading">
+            <div>
+              <h2>Frequently asked questions</h2>
+              <p>Everything you need to know before you jump in.</p>
+            </div>
+          </div>
+          <div class="faq-list">
+            <article class="faq-item active">
+              <header>
+                <span>How does the AI maintain accuracy?</span>
+                <span class="icon">＋</span>
+              </header>
+              <div class="content">It combines live search grounding, structured reasoning, and domain-specific prompts to deliver more reliable answers.</div>
+            </article>
+            <article class="faq-item">
+              <header>
+                <span>Is my data secure?</span>
+                <span class="icon">＋</span>
+              </header>
+              <div class="content">Yes. Sensitive workflows include encryption, access controls, and privacy-first design principles.</div>
+            </article>
+            <article class="faq-item">
+              <header>
+                <span>Can I use it for coding and research?</span>
+                <span class="icon">＋</span>
+              </header>
+              <div class="content">Absolutely. It supports code generation, documentation, analysis, and research synthesis across many disciplines.</div>
+            </article>
+          </div>
+        </section>
+
+        <footer>
+          <div class="logo-box" style="padding: 12px 14px; border-radius: 16px;">
+            <div class="logo-mark">N</div>
+            <div class="logo-copy">
+              <strong>NeuralOS</strong>
+              <span>Premium AI assistant</span>
+            </div>
+          </div>
+          <div class="footer-links">
+            <a href="#">Documentation</a>
+            <a href="#">Contact</a>
+            <a href="#">Social</a>
+          </div>
+          <div style="color: var(--muted);">© 2026 NeuralOS. All rights reserved.</div>
+        </footer>
+      </main>
+    </div>
+
+    <div class="modal-overlay" id="modalOverlay" hidden>
+      <div class="modal-box glass-card" id="modalBox">
+        <div class="modal-header">
+          <h3 id="modalTitle">Title</h3>
+          <button class="icon-btn" id="modalClose" type="button">✕</button>
+        </div>
+        <div class="modal-body" id="modalBody"></div>
+      </div>
+    </div>
+
+    <script>
+      let conversationHistory = [];
+      let currentChatId = null;
+
+      function escapeHtml(str) {
+        return String(str)
+          .replace(/&/g, '&amp;')
+          .replace(/</g, '&lt;')
+          .replace(/>/g, '&gt;');
+      }
+
+      function markdownToHtml(text) {
+        const codeBlocks = [];
+        // Pull out fenced code blocks first so their contents are never
+        // touched by the other markdown replacements below.
+        let working = String(text).replace(/```(\w*)\n?([\s\S]*?)```/g, (match, lang, code) => {
+          const index = codeBlocks.length;
+          codeBlocks.push({ lang: lang || 'text', code: code.replace(/\n$/, '') });
+          return `\u0000CODEBLOCK${index}\u0000`;
+        });
+
+        let html = working
+          .replace(/^### (.*?)$/gm, '<h3>$1</h3>')
+          .replace(/^## (.*?)$/gm, '<h2>$1</h2>')
+          .replace(/^# (.*?)$/gm, '<h1>$1</h1>')
+          .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
+          .replace(/\*(.*?)\*/g, '<em>$1</em>')
+          .replace(/`(.*?)`/g, '<code>$1</code>')
+          .replace(/^- (.*?)$/gm, '<li>$1</li>')
+          .replace(/(<li>.*<\/li>)/s, '<ul>$1</ul>')
+          .replace(/\n\n/g, '</p><p>')
+          .replace(/^/gm, (match) => match === '' ? '' : match);
+
+        html = html.replace(/\u0000CODEBLOCK(\d+)\u0000/g, (match, idx) => {
+          const block = codeBlocks[Number(idx)];
+          if (!block) return '';
+          const blockId = `code-${Date.now()}-${idx}-${Math.floor(Math.random() * 10000)}`;
+          return `<div class="code-block"><div class="code-block-header"><span>${escapeHtml(block.lang)}</span><button class="copy-code-btn" data-copy-target="${blockId}" type="button">Copy</button></div><pre><code id="${blockId}">${escapeHtml(block.code)}</code></pre></div>`;
+        });
+
+        return html;
+      }
+
+      document.addEventListener('click', (event) => {
+        const copyBtn = event.target.closest('.copy-code-btn');
+        if (!copyBtn) return;
+        const target = document.getElementById(copyBtn.dataset.copyTarget);
+        if (!target) return;
+        navigator.clipboard.writeText(target.textContent).then(() => {
+          const original = copyBtn.textContent;
+          copyBtn.textContent = 'Copied!';
+          setTimeout(() => { copyBtn.textContent = original; }, 1400);
+        });
+      });
+
+      function saveChatHistory() {
+        if (!currentChatId) {
+          currentChatId = 'chat_' + Date.now();
+        }
+        const timestamp = new Date().toISOString();
+        const title = conversationHistory[0]?.user?.substring(0, 30) + '...' || 'New Chat';
+
+        const allChats = JSON.parse(localStorage.getItem('allChats') || '{}');
+        allChats[currentChatId] = { id: currentChatId, title, timestamp, messages: conversationHistory };
+        localStorage.setItem('allChats', JSON.stringify(allChats));
+
+        // Also persist to the server so history survives across sessions
+        // even if this browser's localStorage gets cleared.
+        fetch('/api/history', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ id: currentChatId, title, timestamp, messages: conversationHistory }),
+        }).catch((error) => console.error('History sync failed:', error));
+      }
+
+      function addToHistory(user, bot) {
+        conversationHistory.push({ user, bot, timestamp: new Date().toISOString() });
+        saveChatHistory();
+      }
+
+      const MODEL_OPTIONS = [
+        { id: 'gemini-3.8-flash', name: 'Gemini 3.8 Flash', desc: 'Latest generation Flash model with the newest features and best default choice.' },
+      ];
+
+      function getSelectedModel() {
+        const savedModel = localStorage.getItem('selectedModel');
+        const normalized = savedModel ? savedModel.replace(/^models\//i, '') : null;
+
+        if (MODEL_OPTIONS.some((option) => option.id === normalized)) {
+          return normalized;
+        }
+
+        return MODEL_OPTIONS[0].id;
+      }
+
+      function setSelectedModel(modelId) {
+        localStorage.setItem('selectedModel', modelId.replace(/^models\//i, ''));
+      }
+
+      document.addEventListener('pointermove', (event) => {
+        glow.style.left = `${event.clientX}px`;
+        glow.style.top = `${event.clientY}px`;
+      });
+
+      const faqItems = document.querySelectorAll('.faq-item');
+      faqItems.forEach((item) => {
+        item.addEventListener('click', () => {
+          faqItems.forEach((entry) => entry.classList.remove('active'));
+          item.classList.add('active');
+        });
+      });
+
+      const heroChatForm = document.getElementById('heroChatForm');
+      const heroChatInput = document.getElementById('heroChatInput');
+      const conversationForm = document.getElementById('conversationForm');
+      const conversationInput = document.getElementById('conversationInput');
+      const conversationSendBtn = document.getElementById('conversationSendBtn');
+      const conversationShell = document.getElementById('conversationShell');
+      const conversationMessages = document.getElementById('conversationMessages');
+      const heroCard = document.getElementById('heroCard');
+      const heroHeading = document.getElementById('heroHeading');
+      const heroText = document.getElementById('heroText');
+      const heroChatShell = document.getElementById('heroChatShell');
+      const topbar = document.getElementById('topbar');
+      const backToHome = document.getElementById('backToHome');
+      const glow = document.querySelector('.cursor-glow');
+
+      // ---- Generating / stop-button state ----
+      let isGenerating = false;
+      let currentAbortController = null;
+      let currentStreamStop = null;
+
+      function setGeneratingState(active) {
+        isGenerating = active;
+        if (!conversationSendBtn) return;
+        conversationSendBtn.classList.toggle('stop-mode', active);
+        conversationSendBtn.textContent = active ? '■' : '➜';
+        conversationSendBtn.title = active ? 'Stop generating' : 'Send';
+      }
+
+      function stopGenerating() {
+        if (currentAbortController) {
+          currentAbortController.abort();
+        }
+        if (currentStreamStop) {
+          currentStreamStop();
+        } else {
+          setGeneratingState(false);
+        }
+      }
+
+      function attachMessageActions(container, wrapper, question) {
+        const actions = document.createElement('div');
+        actions.className = 'message-actions';
+
+        const copyBtn = document.createElement('button');
+        copyBtn.className = 'btn-small';
+        copyBtn.type = 'button';
+        copyBtn.textContent = 'Copy';
+        copyBtn.addEventListener('click', () => {
+          navigator.clipboard.writeText(container.textContent.trim()).then(() => {
+            copyBtn.textContent = 'Copied!';
+            setTimeout(() => { copyBtn.textContent = 'Copy'; }, 1400);
+          });
+        });
+        actions.appendChild(copyBtn);
+
+        if (question) {
+          const regenBtn = document.createElement('button');
+          regenBtn.className = 'btn-small';
+          regenBtn.type = 'button';
+          regenBtn.textContent = 'Regenerate';
+          regenBtn.addEventListener('click', async () => {
+            regenBtn.disabled = true;
+            regenBtn.textContent = 'Regenerating…';
+            const newReply = await getReply(question);
+            container.innerHTML = markdownToHtml(newReply);
+            const lastEntry = conversationHistory[conversationHistory.length - 1];
+            if (lastEntry && lastEntry.user === question) {
+              lastEntry.bot = newReply;
+              saveChatHistory();
+            }
+            regenBtn.disabled = false;
+            regenBtn.textContent = 'Regenerate';
+          });
+          actions.appendChild(regenBtn);
+        }
+
+        wrapper.querySelector('.bubble').appendChild(actions);
+      }
+
+      function createMessage(text, sender, question) {
+        const wrapper = document.createElement('div');
+        wrapper.className = `message ${sender}`;
+        const bubble = document.createElement('div');
+        bubble.className = 'bubble';
+        const label = document.createElement('strong');
+        label.textContent = sender === 'user' ? 'You' : 'NeuralOS';
+        bubble.appendChild(label);
+
+        if (sender === 'bot') {
+          const paragraph = document.createElement('div');
+          paragraph.className = 'bot-message';
+          paragraph.innerHTML = markdownToHtml(text);
+          bubble.appendChild(paragraph);
+          wrapper.appendChild(bubble);
+          conversationMessages.appendChild(wrapper);
+          attachMessageActions(paragraph, wrapper, question);
+        } else {
+          const paragraph = document.createElement('p');
+          paragraph.textContent = text;
+          bubble.appendChild(paragraph);
+          wrapper.appendChild(bubble);
+          conversationMessages.appendChild(wrapper);
+        }
+
+        conversationMessages.scrollTop = conversationMessages.scrollHeight;
+        return wrapper;
+      }
+
+      function createTypingIndicator() {
+        const wrapper = document.createElement('div');
+        wrapper.className = 'message bot';
+        const bubble = document.createElement('div');
+        bubble.className = 'bubble';
+        const label = document.createElement('strong');
+        label.textContent = 'NeuralOS';
+        const indicator = document.createElement('div');
+        indicator.className = 'typing-indicator';
+        indicator.innerHTML = '<span></span><span></span><span></span>';
+        bubble.appendChild(label);
+        bubble.appendChild(indicator);
+        wrapper.appendChild(bubble);
+        conversationMessages.appendChild(wrapper);
+        conversationMessages.scrollTop = conversationMessages.scrollHeight;
+        return { wrapper, indicator };
+      }
+
+      function streamReply(text, speed, question) {
+        const actualSpeed = speed || 16;
+        const bubble = document.createElement('div');
+        bubble.className = 'bubble';
+        const label = document.createElement('strong');
+        label.textContent = 'NeuralOS';
+        const content = document.createElement('div');
+        content.className = 'reply-content';
+        const paragraph = document.createElement('p');
+        content.appendChild(paragraph);
+        bubble.appendChild(label);
+        bubble.appendChild(content);
+
+        const wrapper = document.createElement('div');
+        wrapper.className = 'message bot';
+        wrapper.appendChild(bubble);
+        conversationMessages.appendChild(wrapper);
+        conversationMessages.scrollTop = conversationMessages.scrollHeight;
+
+        const displayText = String(text || '');
+        let index = 0;
+        let interval = null;
+
+        function finish() {
+          if (interval) clearInterval(interval);
+          interval = null;
+          currentStreamStop = null;
+          attachMessageActions(content, wrapper, question);
+          setGeneratingState(false);
+        }
+
+        interval = setInterval(() => {
+          paragraph.textContent += displayText[index];
+          paragraph.innerHTML = markdownToHtml(paragraph.textContent);
+          conversationMessages.scrollTop = conversationMessages.scrollHeight;
+          index += 1;
+          if (index >= displayText.length) {
+            finish();
+          }
+        }, actualSpeed);
+
+        // Lets the stop button cut the streaming short: reveal the full
+        // reply instantly instead of leaving it half-typed.
+        currentStreamStop = () => {
+          paragraph.innerHTML = markdownToHtml(displayText);
+          finish();
+        };
+      }
+
+      async function getReply(message, signal) {
+        const url = '/api/chat';
+        try {
+          const response = await fetch(url, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ message, model: getSelectedModel() }),
+            signal,
+          });
+
+          const data = await response.json();
+
+          if (!response.ok) {
+            console.error('API Error:', data);
+            pushNotification(`Request failed: ${data?.error || 'API request failed'}`, 'error');
+            return data?.error || 'Error fetching response';
+          }
+
+          return data?.text || 'Sorry, I couldn’t get that';
+        } catch (error) {
+          if (error.name === 'AbortError') {
+            return null; // user hit stop before a response came back
+          }
+          console.error('Fetch error:', error);
+          pushNotification('Could not reach the server. Check that it’s running.', 'error');
+          return 'Sorry, something went wrong.';
+        }
+      }
+
+
+      function showConversation() {
+        heroCard.classList.add('transitioned');
+        topbar.classList.add('transitioned');
+        document.querySelectorAll('section, footer').forEach((element) => {
+          if (element.id !== 'conversationShell') {
+            element.classList.add('transitioned');
+          }
+        });
+        heroHeading.hidden = true;
+        heroText.hidden = true;
+        heroChatShell.hidden = true;
+        conversationShell.hidden = false;
+        conversationShell.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        heroChatInput.blur();
+        conversationInput.focus();
+      }
+
+      async function sendMessage(question) {
+        if (!question || isGenerating) return;
+
+        showConversation();
+        createMessage(question, 'user');
+        heroChatInput.value = '';
+        conversationInput.value = '';
+
+        setGeneratingState(true);
+        const typing = createTypingIndicator();
+        currentAbortController = new AbortController();
+
+        const reply = await getReply(question, currentAbortController.signal);
+        typing.wrapper.remove();
+        currentAbortController = null;
+
+        if (reply === null) {
+          // User hit stop before the response arrived — nothing to show.
+          setGeneratingState(false);
+          return;
+        }
+
+        addToHistory(question, reply);
+        streamReply(reply, 16, question);
+      }
+
+      heroChatForm.addEventListener('submit', (event) => {
+        event.preventDefault();
+        if (isGenerating) return;
+        sendMessage(heroChatInput.value.trim());
+      });
+
+      conversationForm.addEventListener('submit', (event) => {
+        event.preventDefault();
+        if (isGenerating) {
+          stopGenerating();
+          return;
+        }
+        sendMessage(conversationInput.value.trim());
+      });
+
+      backToHome.addEventListener('click', () => {
+        heroCard.classList.remove('transitioned');
+        topbar.classList.remove('transitioned');
+        document.querySelectorAll('section, footer').forEach((element) => {
+          element.classList.remove('transitioned');
+        });
+        heroHeading.hidden = false;
+        heroText.hidden = false;
+        heroChatShell.hidden = false;
+        conversationShell.hidden = true;
+        conversationMessages.innerHTML = '';
+        conversationHistory = [];
+        currentChatId = null;
+        heroChatInput.focus();
+      });
+
+      const quickChipPrompts = {
+        'Create Image': 'Describe an image you could generate for me based on this idea: ',
+        'Write or Edit': 'Help me write or edit the following: ',
+        'Search the Web': 'Search for information about: ',
+        'Generate Code': 'Write code for the following: ',
+        'Summarize PDF': 'Summarize the key points of this document: ',
+        'Analyze Data': 'Analyze the following data and share insights: ',
+      };
+
+      document.querySelectorAll('.quick-chip').forEach((chip) => {
+        chip.addEventListener('click', () => {
+          const label = chip.textContent.replace(/^\S+\s/, '').trim();
+          const starter = quickChipPrompts[label] || '';
+          heroChatInput.value = starter;
+          heroChatInput.focus();
+        });
+      });
+
+      // ---- Notifications (bell icon) ----
+      function getNotifications() {
+        return JSON.parse(localStorage.getItem('notifications') || '[]');
+      }
+      function setNotifications(list) {
+        localStorage.setItem('notifications', JSON.stringify(list));
+      }
+      function updateNotifDot() {
+        const unread = getNotifications().some((n) => !n.read);
+        notifDot.hidden = !unread;
+      }
+      function pushNotification(text, type) {
+        const list = getNotifications();
+        list.unshift({ id: 'notif_' + Date.now(), text, type: type || 'info', timestamp: new Date().toISOString(), read: false });
+        setNotifications(list.slice(0, 30));
+        updateNotifDot();
+      }
+
+      const notifBtn = document.getElementById('notifBtn');
+      const notifDot = document.getElementById('notifDot');
+      const upgradeBtn = document.getElementById('upgradeBtn');
+      const topbarAvatar = document.getElementById('topbarAvatar');
+
+      notifBtn.addEventListener('click', () => {
+        openModal('Notifications', (body) => {
+          const list = getNotifications();
+          if (list.length === 0) {
+            body.innerHTML = '<p class="empty-state">You’re all caught up. No notifications yet.</p>';
+            return;
+          }
+          const clearBtn = document.createElement('button');
+          clearBtn.className = 'btn-small';
+          clearBtn.type = 'button';
+          clearBtn.textContent = 'Clear all';
+          clearBtn.style.marginBottom = '10px';
+          clearBtn.addEventListener('click', () => {
+            setNotifications([]);
+            updateNotifDot();
+            body.innerHTML = '<p class="empty-state">You’re all caught up. No notifications yet.</p>';
+          });
+          body.appendChild(clearBtn);
+
+          list.forEach((n) => {
+            const item = document.createElement('div');
+            item.className = 'list-item';
+            const top = document.createElement('div');
+            top.className = 'list-item-top';
+            const label = document.createElement('strong');
+            label.textContent = n.type === 'error' ? '⚠️ ' + n.text : n.text;
+            top.appendChild(label);
+            item.appendChild(top);
+            const date = document.createElement('span');
+            date.textContent = new Date(n.timestamp).toLocaleString();
+            item.appendChild(date);
+            body.appendChild(item);
+          });
+
+          const list2 = getNotifications().map((n) => ({ ...n, read: true }));
+          setNotifications(list2);
+          updateNotifDot();
+        });
+      });
+
+      upgradeBtn.addEventListener('click', () => {
+        document.getElementById('pricing').scrollIntoView({ behavior: 'smooth', block: 'start' });
+      });
+
+      // ---- Pricing card CTAs ----
+      document.querySelectorAll('.plan-btn').forEach((btn) => {
+        btn.addEventListener('click', () => {
+          const plan = btn.dataset.plan;
+          localStorage.setItem('selectedPlan', plan);
+          if (plan === 'Scale') {
+            pushNotification('Thanks! Our team will reach out about Enterprise/Scale.', 'info');
+            openModal('Contact Sales', (body) => {
+              const p = document.createElement('p');
+              p.className = 'empty-state';
+              p.textContent = 'Tell us a bit about your team and we\'ll follow up about a custom Scale plan.';
+              body.appendChild(p);
+            });
+          } else {
+            pushNotification(`You're on the ${plan} plan now.`, 'info');
+            document.querySelectorAll('.pricing-card').forEach((card) => card.classList.remove('current-plan'));
+            btn.closest('.pricing-card').classList.add('current-plan');
+            btn.textContent = 'Current Plan';
+          }
+        });
+      });
+
+      topbarAvatar.addEventListener('click', () => {
+        navSettings.click();
+      });
+
+      updateNotifDot();
+
+      const newChatBtn = document.querySelector('.new-chat');
+      const navChatHistory = document.getElementById('navChatHistory');
+      const navAiModels = document.getElementById('navAiModels');
+      const navLibrary = document.getElementById('navLibrary');
+      const navProjects = document.getElementById('navProjects');
+      const navSettings = document.getElementById('navSettings');
+
+      newChatBtn.addEventListener('click', () => {
+        conversationMessages.innerHTML = '';
+        conversationHistory = [];
+        currentChatId = null;
+        showConversation();
+      });
+
+      // ---- Generic modal helpers ----
+      const modalOverlay = document.getElementById('modalOverlay');
+      const modalTitle = document.getElementById('modalTitle');
+      const modalBody = document.getElementById('modalBody');
+      const modalClose = document.getElementById('modalClose');
+
+      function openModal(title, renderBody) {
+        modalTitle.textContent = title;
+        modalBody.innerHTML = '';
+        renderBody(modalBody);
+        modalOverlay.hidden = false;
+      }
+
+      function closeModal() {
+        modalOverlay.hidden = true;
+        modalBody.innerHTML = '';
+      }
+
+      modalClose.addEventListener('click', closeModal);
+      modalOverlay.addEventListener('click', (event) => {
+        if (event.target === modalOverlay) closeModal();
+      });
+
+      // ---- Chat History modal (now backed by the server) ----
+      async function loadChatList() {
+        try {
+          const response = await fetch('/api/history');
+          if (!response.ok) throw new Error('history fetch failed');
+          return await response.json();
+        } catch (error) {
+          console.error('Could not load server history, falling back to local:', error);
+          const allChats = JSON.parse(localStorage.getItem('allChats') || '{}');
+          return Object.values(allChats);
+        }
+      }
+
+      function openChat(chat) {
+        currentChatId = chat.id;
+        conversationHistory = chat.messages || [];
+        conversationMessages.innerHTML = '';
+        conversationHistory.forEach((msg) => {
+          createMessage(msg.user, 'user');
+          createMessage(msg.bot, 'bot', msg.user);
+        });
+        showConversation();
+        closeModal();
+      }
+
+      navChatHistory.addEventListener('click', async () => {
+        openModal('Chat History', async (body) => {
+          body.innerHTML = '<p class="hint">Loading…</p>';
+          const chatList = (await loadChatList()).sort((a, b) => new Date(b.timestamp) - new Date(a.timestamp));
+          body.innerHTML = '';
+
+          if (chatList.length === 0) {
+            body.innerHTML = '<p class="empty-state">No chat history yet. Start a new conversation!</p>';
+            return;
+          }
+
+          chatList.forEach((chat) => {
+            const item = document.createElement('div');
+            item.className = 'list-item';
+            item.style.cursor = 'pointer';
+            const top = document.createElement('div');
+            top.className = 'list-item-top';
+            const title = document.createElement('strong');
+            title.textContent = chat.title || 'Untitled chat';
+            const delBtn = document.createElement('button');
+            delBtn.className = 'btn-small danger';
+            delBtn.type = 'button';
+            delBtn.textContent = 'Delete';
+            delBtn.addEventListener('click', async (event) => {
+              event.stopPropagation();
+              await fetch(`/api/history/${chat.id}`, { method: 'DELETE' }).catch(() => {});
+              const allChats = JSON.parse(localStorage.getItem('allChats') || '{}');
+              delete allChats[chat.id];
+              localStorage.setItem('allChats', JSON.stringify(allChats));
+              item.remove();
+            });
+            top.appendChild(title);
+            top.appendChild(delBtn);
+            const date = document.createElement('span');
+            date.textContent = new Date(chat.timestamp).toLocaleString();
+            item.appendChild(top);
+            item.appendChild(date);
+            item.addEventListener('click', () => openChat(chat));
+            body.appendChild(item);
+          });
+        });
+      });
+
+      // ---- AI Models modal ----
+      navAiModels.addEventListener('click', () => {
+        openModal('AI Models', (body) => {
+          const current = getSelectedModel();
+          const hint = document.createElement('p');
+          hint.className = 'hint';
+          hint.textContent = 'Choose which Gemini model answers your questions. If a model isn’t available on your API key, the chat will show the exact error so you know to switch.';
+          body.appendChild(hint);
+
+          MODEL_OPTIONS.forEach((model) => {
+            const option = document.createElement('div');
+            option.className = 'model-option' + (model.id === current ? ' selected' : '');
+            const info = document.createElement('div');
+            const name = document.createElement('strong');
+            name.textContent = model.name;
+            const desc = document.createElement('span');
+            desc.textContent = model.desc;
+            info.appendChild(name);
+            info.appendChild(desc);
+            option.appendChild(info);
+            if (model.id === current) {
+              const badge = document.createElement('span');
+              badge.textContent = 'Selected';
+              option.appendChild(badge);
+            }
+            option.addEventListener('click', () => {
+              setSelectedModel(model.id);
+              pushNotification(`Switched to ${model.name}`, 'info');
+              closeModal();
+            });
+            body.appendChild(option);
+          });
+        });
+      });
+
+      // ---- Library modal (simple saved notes/snippets) ----
+      function getLibraryItems() {
+        return JSON.parse(localStorage.getItem('libraryItems') || '[]');
+      }
+      function setLibraryItems(items) {
+        localStorage.setItem('libraryItems', JSON.stringify(items));
+      }
+
+      function renderListModal({ title, hint, storageGetter, storageSetter, placeholderTitle, placeholderBody }) {
+        openModal(title, (body) => {
+          const hintEl = document.createElement('p');
+          hintEl.className = 'hint';
+          hintEl.textContent = hint;
+          body.appendChild(hintEl);
+
+          const form = document.createElement('div');
+          form.className = 'modal-form';
+          const titleInput = document.createElement('input');
+          titleInput.placeholder = placeholderTitle;
+          const bodyInput = document.createElement('textarea');
+          bodyInput.placeholder = placeholderBody;
+          bodyInput.rows = 3;
+          const addBtn = document.createElement('button');
+          addBtn.className = 'btn-primary';
+          addBtn.type = 'button';
+          addBtn.textContent = 'Add';
+          form.appendChild(titleInput);
+          form.appendChild(bodyInput);
+          form.appendChild(addBtn);
+          body.appendChild(form);
+
+          const list = document.createElement('div');
+          list.style.display = 'flex';
+          list.style.flexDirection = 'column';
+          list.style.gap = '10px';
+          list.style.marginTop = '14px';
+          body.appendChild(list);
+
+          function renderList() {
+            list.innerHTML = '';
+            const items = storageGetter();
+            if (items.length === 0) {
+              list.innerHTML = '<p class="empty-state">Nothing saved yet.</p>';
+              return;
+            }
+            items.slice().reverse().forEach((entry) => {
+              const item = document.createElement('div');
+              item.className = 'list-item';
+              const top = document.createElement('div');
+              top.className = 'list-item-top';
+              const t = document.createElement('strong');
+              t.textContent = entry.title;
+              const delBtn = document.createElement('button');
+              delBtn.className = 'btn-small danger';
+              delBtn.type = 'button';
+              delBtn.textContent = 'Delete';
+              delBtn.addEventListener('click', () => {
+                const remaining = storageGetter().filter((e) => e.id !== entry.id);
+                storageSetter(remaining);
+                renderList();
+              });
+              top.appendChild(t);
+              top.appendChild(delBtn);
+              item.appendChild(top);
+              if (entry.body) {
+                const b = document.createElement('div');
+                b.className = 'list-item-body';
+                b.textContent = entry.body;
+                item.appendChild(b);
+              }
+              list.appendChild(item);
+            });
+          }
+
+          addBtn.addEventListener('click', () => {
+            const t = titleInput.value.trim();
+            const b = bodyInput.value.trim();
+            if (!t) return;
+            const items = storageGetter();
+            items.push({ id: 'item_' + Date.now(), title: t, body: b, timestamp: new Date().toISOString() });
+            storageSetter(items);
+            titleInput.value = '';
+            bodyInput.value = '';
+            renderList();
+          });
+
+          renderList();
+        });
+      }
+
+      navLibrary.addEventListener('click', () => {
+        renderListModal({
+          title: 'Library',
+          hint: 'Save useful snippets, prompts, or references you want to come back to.',
+          storageGetter: getLibraryItems,
+          storageSetter: setLibraryItems,
+          placeholderTitle: 'Item title',
+          placeholderBody: 'Notes or content (optional)',
+        });
+      });
+
+      // ---- Projects modal ----
+      function getProjectItems() {
+        return JSON.parse(localStorage.getItem('projectItems') || '[]');
+      }
+      function setProjectItems(items) {
+        localStorage.setItem('projectItems', JSON.stringify(items));
+      }
+
+      navProjects.addEventListener('click', () => {
+        renderListModal({
+          title: 'Projects',
+          hint: 'Track ongoing projects — what you\'re working on and where things stand.',
+          storageGetter: getProjectItems,
+          storageSetter: setProjectItems,
+          placeholderTitle: 'Project name',
+          placeholderBody: 'Status or description (optional)',
+        });
+      });
+
+      // ---- Settings modal ----
+      navSettings.addEventListener('click', () => {
+        openModal('Settings', (body) => {
+          const modelRow = document.createElement('div');
+          modelRow.className = 'list-item';
+          const modelInfo = document.createElement('div');
+          const modelLabel = document.createElement('strong');
+          modelLabel.textContent = 'Current model';
+          const modelName = document.createElement('span');
+          const current = MODEL_OPTIONS.find((m) => m.id === getSelectedModel());
+          modelName.textContent = current ? current.name : getSelectedModel();
+          modelInfo.appendChild(modelLabel);
+          modelInfo.appendChild(modelName);
+          const changeBtn = document.createElement('button');
+          changeBtn.className = 'btn-small';
+          changeBtn.type = 'button';
+          changeBtn.textContent = 'Change';
+          changeBtn.addEventListener('click', () => navAiModels.click());
+          modelRow.appendChild(modelInfo);
+          modelRow.appendChild(changeBtn);
+          body.appendChild(modelRow);
+
+          const themeRow = document.createElement('div');
+          themeRow.className = 'list-item';
+          const themeInfo = document.createElement('div');
+          const themeLabel = document.createElement('strong');
+          themeLabel.textContent = 'Theme';
+          const themeName = document.createElement('span');
+          themeName.textContent = document.body.classList.contains('light-theme') ? 'Light' : 'Dark';
+          themeInfo.appendChild(themeLabel);
+          themeInfo.appendChild(themeName);
+          const themeBtn = document.createElement('button');
+          themeBtn.className = 'btn-small';
+          themeBtn.type = 'button';
+          themeBtn.textContent = 'Toggle';
+          themeBtn.addEventListener('click', () => {
+            document.body.classList.toggle('light-theme');
+            localStorage.setItem('theme', document.body.classList.contains('light-theme') ? 'light' : 'dark');
+            themeName.textContent = document.body.classList.contains('light-theme') ? 'Light' : 'Dark';
+          });
+          themeRow.appendChild(themeInfo);
+          themeRow.appendChild(themeBtn);
+          body.appendChild(themeRow);
+
+          const clearRow = document.createElement('div');
+          clearRow.className = 'list-item';
+          const clearInfo = document.createElement('div');
+          const clearLabel = document.createElement('strong');
+          clearLabel.textContent = 'Chat history';
+          const clearDesc = document.createElement('span');
+          clearDesc.textContent = 'Permanently delete all saved conversations.';
+          clearInfo.appendChild(clearLabel);
+          clearInfo.appendChild(clearDesc);
+          const clearBtn = document.createElement('button');
+          clearBtn.className = 'btn-small danger';
+          clearBtn.type = 'button';
+          clearBtn.textContent = 'Clear all';
+          clearBtn.addEventListener('click', async () => {
+            if (!confirm('Delete all chat history? This cannot be undone.')) return;
+            await fetch('/api/history', { method: 'DELETE' }).catch(() => {});
+            localStorage.removeItem('allChats');
+            clearBtn.textContent = 'Cleared';
+            pushNotification('Chat history cleared', 'info');
+          });
+          clearRow.appendChild(clearInfo);
+          clearRow.appendChild(clearBtn);
+          body.appendChild(clearRow);
+        });
+      });
+
+      if (localStorage.getItem('theme') === 'light') {
+        document.body.classList.add('light-theme');
+      }
+
+      const savedPlan = localStorage.getItem('selectedPlan');
+      if (savedPlan) {
+        document.querySelectorAll('.plan-btn').forEach((btn) => {
+          if (btn.dataset.plan === savedPlan && savedPlan !== 'Scale') {
+            btn.textContent = 'Current Plan';
+            btn.closest('.pricing-card').classList.add('current-plan');
+          }
+        });
+      }
+
+      if (!localStorage.getItem('hasVisited')) {
+        pushNotification('Welcome to NeuralOS! Try picking a model from AI Models or ask a question below.', 'info');
+        localStorage.setItem('hasVisited', 'true');
+      }
+
+      const counters = document.querySelectorAll('.number');
+      const counterObserver = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+          const el = entry.target;
+          const target = parseFloat(el.dataset.count);
+          const suffix = el.textContent.includes('%') ? '%' : '';
+          const decimals = Number.isInteger(target) ? 0 : 1;
+          let current = 0;
+          const duration = 1400;
+          const start = performance.now();
+          const tick = (now) => {
+            const progress = Math.min((now - start) / duration, 1);
+            const eased = 1 - Math.pow(1 - progress, 3);
+            current = target * eased;
+            const display = target >= 100 ? Math.round(current) : current.toFixed(decimals);
+            el.textContent = `${display}`;
+            if (progress < 1) requestAnimationFrame(tick);
+          };
+          requestAnimationFrame(tick);
+          counterObserver.unobserve(el);
+        });
+      }, { threshold: 0.6 });
+
+      counters.forEach((counter) => counterObserver.observe(counter));
+    </script>
+  </body>
+</html>
